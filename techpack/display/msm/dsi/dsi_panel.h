@@ -281,6 +281,7 @@ struct dsi_panel {
 	struct brightness_alpha_pair *fod_dim_lut;
         unsigned int fod_dim_lut_len;
 	u8 fod_dim_alpha;
+	bool fod_ui;
 #if defined(CONFIG_DISPLAY_SAMSUNG)
 	void *panel_private;
 	struct device_node *self_display_of_node;
@@ -439,4 +440,6 @@ int __ss_dsi_panel_parse_cmd_sets(struct dsi_panel_cmd_set *cmd,
 int dsi_panel_boost_regulator(struct dsi_panel *panel, bool enable);
 #endif
 
+bool dsi_panel_get_fod_ui(struct dsi_panel *panel);
+void dsi_panel_set_fod_ui(struct dsi_panel *panel, bool status);
 #endif /* _DSI_PANEL_H_ */
