@@ -280,6 +280,7 @@ struct dsi_panel {
 
 	struct brightness_alpha_pair *fod_dim_lut;
         unsigned int fod_dim_lut_len;
+	u8 fod_dim_alpha;
 #if defined(CONFIG_DISPLAY_SAMSUNG)
 	void *panel_private;
 	struct device_node *self_display_of_node;
